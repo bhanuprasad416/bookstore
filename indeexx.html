@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document of books</title>
+  <link rel="stylesheet" href="indexx.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <style>
+       table{
+            display: flex;
+    justify-content: center;
+        }
+    .hover-effect {
+    display: inline-block;
+    padding: 8px;
+    background-image: linear-gradient(to right, #05fbbe,rgb(0, 61, 194),rgb(0, 255, 145));
+    background-size: 500% 80%;
+    transition: background-position 0.5s;
+  }
+
+  .hover-effect:hover {
+    background-position: -100% 0;
+  }
+      
+     .pic {
+      cursor: pointer;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      z-index: 1000;
+      }
+    .popup img {
+      max-width: 100%;
+      max-height: 449px;
+      margin-right: 20px;
+    }
+      
+  </style>
+  
+ 
+
+</head>
+<body>
+  <header>
+    <div class="nav">
+
+      <h1 style="color: black;font-family: cursive;">books4u</h1>
+
+
+      <div class="box">
+        <div class="cart-count">0</div>
+        <ion-icon name="cart"  id="cart-icon" ></ion-icon>
+      </div>
+
+      <div class="cart">
+        <div class="cart-title">Cart Items</div>
+        <div class="cart-content">
+
+        </div>
+        
+      <div class="total">
+        <div class="total-title">Total</div>
+        <div class="total-price">Rs.0</div>
+      </div>
+
+      <button class="btn-buy">Place Order</button>
+
+      <ion-icon name="close" id="cart-close"></ion-icon>
+
+      </div>
+    </div>
+  </header>
+  <h1>. <div><h4>.</h4></div></h1>
+  <main id="bookList">
+    <!-- Book items will be displayed here -->
+  </main>
+    
+    <div class="hover-effect">
+        <h1 style="color: #ea1818;font-family: cursive;">popular books:</h1>
+            <h4><div class="nav-links">
+                <a href="#"> <button>HOME</button></a>
+                <a href="#">story books</a>
+                <a href="#">History</a>
+                <a href="#">Mythology</a>
+                <a href="#">movies</a>
+            </div>
+        </nav></h4>
+  </div>
+  <div class="container">
+    <h2 class="title" style="font-family: cursive;">Discover the Best books you want...</h2>
+
+    <div class="shop-content">
+
+
+      <div class="book-box" >
+        <div class="pic" onclick="showPopup('the book at the midnight', 'midnight.jpg', 'Publidhed on: 9-10-2003')"  ><img src="a (1).jpg" class="book-img">
+        </div>
+        <h2 class="book-title">TEMPEST <div>The mid night</div></h2>
+        <h3 class="book-details">Author:Charles grant</h3>
+        <span class="book-price">Rs.590</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+      
+
+      <div class="book-box">
+        <div class="pic" onclick="showPopup('This book tells about the horror', 'the house.jpg', 'Published on:11-10-2008')"><img src="a (2).webpg" class="book-img"></div>
+        <h2 class="book-title">THE HOUSE <DIV>Bentley little</DIV></h2>
+        <h3 class="book-details">Author:Bentley little</h3>
+        <span class="book-price">Rs.460</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+      
+  
+      <div class="book-box">
+        <div class="pic" onclick="showPopup('This book is about a man', 'THE MAN.jpg', 'Published on:17-11-2010')" ><img src="file:///C:/Users/ECTLAB~1/AppData/Local/Temp/Rar$DIa6336.14888/a%20(2).webp class="book-img"></div>
+        <h2 class="book-title">THE MAN WITH HAT</h2>
+        <h3 class="book-details">Author: Miss.Stella</h3>
+        <span class="book-price">Rs.655</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+      <div class="book-box">
+        <div class="pic" onclick="showPopup('This book is about notes', 'vampirenotes.jpg', 'Published on:15-3-1980')"><img src="a(4).jpg" class="book-img"></div>
+        <h2 class="book-title">VAMPIRE NOTES </h2>
+        <h3 class="book-details">Author: Wendipotki</h3>
+        <span class="book-price">Rs.425</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+      <div class="book-box">
+        <div class="pic" onclick="showPopup('This book is about forbidden things', 'shoot%20for%20the%20stars.png', 'Published on:1479-1970')"><img src="a(5)" class="book-img"></div>
+        <h2 class="book-title">THE FORBIDDEN THINGS</h2>
+        <h3 class="book-details">Author:Jon hook</h3>
+        <span class="book-price">Rs.350</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+  
+      <div class="book-box">
+        <div class="pic" onclick="showPopup('This book about dark_forces in castel','Dark-castle.jpg', 'Published on:23-5-2002')"><img src="Dark-castle.jpg" class="book-img"></div>
+        <h2 class="book-title">THE DARK CASTEL</h2>
+        <h3 class="book-details">Author:weliymes</h3>
+        <span class="book-price">Rs.765</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+  
+      <div class="book-box">
+        <div class="pic" onclick="showPopup('This book about the boy wants to sleep on star','sleep.jpg', 'Published on:12-9-2015')"><img src="sleep.jpg" class="book-img"></div>
+        <h2 class="book-title">SLEEP IN A SAR OF STARS</h2>
+        <h3 class="book-details">Author:jon hook</h3>
+        <span class="book-price">Rs.995</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+      <div class="book-box">
+        <div class="pic" onclick="showPopup('This book about the haunted house in village','haunted house.jpg', 'Published on:12-10-2009')"><img src="c:\Users\Sriram Balabhadra\Desktop\n books\.vscode\haunted house.jpg" class="book-img"></div>
+        <h2 class="book-title">Haunted House</h2>
+        <h3 class="book-details">Author:Jack killborn</h3>
+        <span class="book-price">Rs.705</span>
+        <ion-icon name="cart" class="add-cart"></ion-icon>
+      </div>
+  
+
+
+
+    
+    
+
+    </div>
+  </div>
+  <script src="indexx.js"></script>
+  
+   <div class="popup" id="popup">
+    <img id="popup-image" src="" alt="Book Cover">
+    <h2 id="popup-title"></h2>
+    <h2 id="popup-details"></h2>
+    <button onclick="closePopup()" class="bb" style="align-items: bottum  left;">Close</button>
+  </div>
+  
+   <script>
+    function showPopup(title, imageSrc, details) {
+      const popup = document.getElementById('popup');
+      const popupTitle = document.getElementById('popup-title');
+      const popupImage = document.getElementById('popup-image');
+      const popupDetails = document.getElementById('popup-details');
+
+      popupTitle.textContent = title;
+      popupImage.src = imageSrc;
+      popupDetails.textContent = details;
+
+      popup.style.display = 'block';
+    }
+
+    function closePopup() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
